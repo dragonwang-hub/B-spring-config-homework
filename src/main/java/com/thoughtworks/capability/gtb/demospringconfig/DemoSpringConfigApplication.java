@@ -11,8 +11,11 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 @SpringBootApplication
 public class DemoSpringConfigApplication implements ApplicationRunner {
 
-	@Autowired
-	private MailConfig mailConfig;
+	private final MailConfig mailConfig;
+
+	public DemoSpringConfigApplication(MailConfig mailConfig) {
+		this.mailConfig = mailConfig;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringConfigApplication.class, args);
